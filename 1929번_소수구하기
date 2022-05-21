@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+void sort(int a[], int n) // 오름차순 선택정렬
+{
+	int i, j, t;
+	for (i = 0; i < n; i++) {
+		for (j = i + 1; j < n; j++) {
+			if (a[i] > a[j]) {
+				t = a[i];
+				a[i] = a[j];
+				a[j] = t;
+			}
+		}
+	}
+}
+
+int main() {
+	int n; // 약수 개수
+	int a[51]; // 약수들
+
+	cin >> n;
+
+	for (int i = 0; i < n; i++) cin >> a[i];
+
+	sort(a, n);
+	for (int i = 0; i < n; i++) cout << a[i] << "\n";
+	cout << a[0] * a[n - 1] << "\n";
+}
